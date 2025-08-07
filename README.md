@@ -1,4 +1,5 @@
 # ronak-demo
 this is a demo repository.
 <br>
-Author - Ronak (student)
+Author - Ronak (student) Sharma
+
