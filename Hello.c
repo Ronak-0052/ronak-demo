@@ -1,9 +1,13 @@
-/*take a number(n) from user & output its cube(n*n*n).*/
+/*WAP to print the average of 3 numbers*/
 #include<stdio.h>
 int main() {
-    int n,cube;
-    printf("Enter a number: ");
-    scanf("%d",&n);
-    printf("\nCube of %d is = %d",n,n*n*n);
+    int a,b,c;
+    printf("Enter first numbers: \n");
+    scan("%d",&a);
+    printf("Enter second numbers: \n");
+    scan("%d",&b);
+    printf("Enter third numbers: \n");
+    scan("%d",&c);
+    printf("Average of %d,%d,%d is =  %d",a,b,c,(a+b+c)/3);
     return 0;
 }
