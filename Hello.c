@@ -1,14 +1,20 @@
-/*WAP to check if given character is digit or not.*/
+/*WAP to print the smallest number of two.*/
 #include<stdio.h>
 int main() {
-    int n;
-    printf("Enter a character ");
-    scanf("%d",&n);
-    if(n>=0 && n<=9){
-        printf("the character is a digit ");
+    int n1,n2;
+    printf("Enter first number : ");
+    scanf("%d",&n1);
+    printf("\nEnter second number : ");
+    scanf("%d",&n2);
+    if(n1>n2){
+        printf("\n%d is the smallest",n2);
+    }
+    else if(n1<n2) {
+        printf("\n%d is the smallest",n1);
     }
     else{
-        printf("the character is not a digit");
+        printf("\n%d is equal to %d",n1,n2);
     }
+    
     return 0;
 }
