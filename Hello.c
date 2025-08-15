@@ -1,12 +1,9 @@
-/*write a program to calculate perimeter of rectangle. take side, a and b, form the user.*/
+/*take a number(n) from user & output its cube(n*n*n).*/
 #include<stdio.h>
 int main() {
-    int a,b,perimeter;
-    printf("Enter the length of the rectangle:");
-    scanf("%d", &a);
-    printf("\nEnter the breadth of the rectangle: ");
-    scanf("%d", &b);    
-    perimeter = 2*(a+b);
-    printf("\nThe perimeter of the rectangle is: %d", perimeter);
+    int n,cube;
+    printf("Enter a number: ");
+    scanf("%d",&n);
+    printf("\nCube of %d is = %d",n,n*n*n);
     return 0;
 }
