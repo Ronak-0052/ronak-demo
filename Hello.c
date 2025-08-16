@@ -1,29 +1,26 @@
-/*WAP to print to check if a number is prime or not.*/
+/*WAP to print prime number in range.*/
 #include<stdio.h>
 int main() {
-    int n, i,prime=1;
-    printf("Enter a number: ");
-    scanf("%d", &n);
-    if (n <= 1) {
-        prime=0;
-    }
-    else{
-        for (i=2; i <= n/2; i++) {
-            if (n%i ==0)
+    int lim, i, n, prime;
+    printf("Enter a number (till which you want filter the prime number): ");
+    scanf("%d", &lim);
+    printf("The range of prime number till %d is : ", lim);
+    for (i = 2; i <= lim; i++)
+    {
+        prime = 1;
+        for (n = 2; n <= i / 2; n++)
+        {
+            if (i % n == 0)
             {
                 prime = 0;
                 break;
             }
         }
-    }
 
-    if (prime)
-    {
-        printf("The %d is a prime number", n);
-    }
-    else
-    {
-        printf("The %d is not a prime number", n);
+        if (prime == 1)
+        {
+            printf("\n%d", i);
+        }
     }
 
     return 0;
