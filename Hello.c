@@ -1,27 +1,29 @@
-/*WAP to print prime number in range.*/
-#include<stdio.h>
-int main() {
-    int lim, i, n, prime;
-    printf("Enter a number (till which you want filter the prime number): ");
-    scanf("%d", &lim);
-    printf("The range of prime number till %d is : ", lim);
-    for (i = 2; i <= lim; i++)
-    {
-        prime = 1;
-        for (n = 2; n <= i / 2; n++)
-        {
-            if (i % n == 0)
-            {
-                prime = 0;
-                break;
-            }
-        }
+/*Write a function to  find sum of digit of a number*/
 
-        if (prime == 1)
-        {
-            printf("\n%d", i);
+#include <stdio.h>
+#include <string.h>
+
+// function to calculate sum of digits from a string
+int sumOfDigits(char number[]) {
+    int sum = 0;
+
+    for (int i = 0; i < strlen(number); i++) {
+        if (number[i] >= '0' && number[i] <= '9') {  // check if it's a digit
+            sum += number[i] - '0';  // convert char to int
         }
     }
+
+    return sum;
+}
+
+int main() {
+    char number[100];   // can store up to 99 digits
+    printf("Enter a number: ");
+    scanf("%s", number);
+
+    int result = sumOfDigits(number);
+
+    printf("The Sum of Digits of %s is: %d\n", number, result);
 
     return 0;
 }
