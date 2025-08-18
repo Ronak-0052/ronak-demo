@@ -1,29 +1,38 @@
-/*Write a function to  find sum of digit of a number*/
+/*Write a function to find square root of a number*/
 
 #include <stdio.h>
-#include <string.h>
 
-// function to calculate sum of digits from a string
-int sumOfDigits(char number[]) {
-    int sum = 0;
+int squareRoot(int number)
+{
 
-    for (int i = 0; i < strlen(number); i++) {
-        if (number[i] >= '0' && number[i] <= '9') {  // check if it's a digit
-            sum += number[i] - '0';  // convert char to int
+    for (int i = 1; i <= number; i++)
+    {
+        if (i * i == number)
+        {
+            return i;
+        }
+
+        else if (i * i > number)
+        {
+            return i - 1;
         }
     }
 
-    return sum;
+    return -1;
 }
 
 int main() {
-    char number[100];   // can store up to 99 digits
-    printf("Enter a number: ");
-    scanf("%s", number);
+    int number;
+    printf("Enter a number : ");
+    scanf("%d", &number);
 
-    int result = sumOfDigits(number);
-
-    printf("The Sum of Digits of %s is: %d\n", number, result);
-
-    return 0;
+    int result = squareRoot(number);
+    if (result == -1)
+    {
+        printf("Square root not found!\n");
+    }
+    else
+    {
+        printf("The Square root of %d is : %d", number, result);
+    }
 }
