@@ -1,46 +1,31 @@
-/*Make your own pow function*/
+/*WAP in C to find Maximum number between two numbers using a pointer.*/
 
-#include<stdio.h>
-
-long long ipow(int baseValue, int degree)
-{
-    if (degree == 0)
-    {
-        return 1;
-    }
-    else if (degree > 0)
-    {
-        long long result = 1;
-        for(int i=0; i < degree; i++)
-        {
-            result *= baseValue;
-        }
-
-        return result;
-    }
-    else
-    {
-        return -1;
-    }
-}
+#include <stdio.h>
 
 int main()
 {
-    int baseValue, degree;
-    printf("Enter the Number : \n");
-    scanf("%d", &baseValue);
-    printf("Enter the Power : \n");
-    scanf("%d", &degree);
+    float num1, num2;
+    float *ptr1, *ptr2;
 
-    long long answer = ipow(baseValue, degree);
+    printf("Enter first number : ");
+    scanf("%f", &num1);
+    printf("Enter second number : ");
+    scanf("%f", &num2);
 
-    if (answer == -1)
+    ptr1 = &num1;
+    ptr2 = &num2;
+
+    if (*ptr1 > *ptr2)
     {
-        printf("The power is in negative");
+        printf("%f is greater than %f", *ptr1, *ptr2);
+    }
+    else if (*ptr1 < *ptr2)
+    {
+        printf("%f is greater than %f", *ptr2, *ptr1);
     }
     else
     {
-        printf("The Answer is : %lld", answer);
+        printf("%f is equal to %f", *ptr1, *ptr2);
     }
 
     return 0;
