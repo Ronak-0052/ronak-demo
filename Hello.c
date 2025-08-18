@@ -1,39 +1,47 @@
-/*Write a function to print "Hot" or "Cold" depending no the temperature user enters.*/
+/*Make your own pow function*/
+
 #include<stdio.h>
 
-int temperatureDetector(int temp){
-    if (temp<15)
-    {
-        return -1;
-    }
-    else if (temp>30)
+long long ipow(int baseValue, int degree)
+{
+    if (degree == 0)
     {
         return 1;
     }
+    else if (degree > 0)
+    {
+        long long result = 1;
+        for(int i=0; i < degree; i++)
+        {
+            result *= baseValue;
+        }
+
+        return result;
+    }
     else
     {
-        return 0;
+        return -1;
     }
 }
 
-int main(){
-    int temp;
-     printf("Enter Temperature (in celcius) : ");
-     scanf("%d", &temp);
+int main()
+{
+    int baseValue, degree;
+    printf("Enter the Number : \n");
+    scanf("%d", &baseValue);
+    printf("Enter the Power : \n");
+    scanf("%d", &degree);
 
-     int result = temperatureDetector(temp);
-     
-     if (result == -1)
-     {
-        printf("Cold");
-     }
-     else if (result == 1)
-     {
-        printf("Hot");
-     }
-     else
-     {
-        printf("moderate");
-     }
+    long long answer = ipow(baseValue, degree);
+
+    if (answer == -1)
+    {
+        printf("The power is in negative");
+    }
+    else
+    {
+        printf("The Answer is : %lld", answer);
+    }
+
     return 0;
 }
