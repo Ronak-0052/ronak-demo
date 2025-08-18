@@ -1,38 +1,39 @@
-/*Write a function to find square root of a number*/
+/*Write a function to print "Hot" or "Cold" depending no the temperature user enters.*/
+#include<stdio.h>
 
-#include <stdio.h>
-
-int squareRoot(int number)
-{
-
-    for (int i = 1; i <= number; i++)
+int temperatureDetector(int temp){
+    if (temp<15)
     {
-        if (i * i == number)
-        {
-            return i;
-        }
-
-        else if (i * i > number)
-        {
-            return i - 1;
-        }
+        return -1;
     }
-
-    return -1;
-}
-
-int main() {
-    int number;
-    printf("Enter a number : ");
-    scanf("%d", &number);
-
-    int result = squareRoot(number);
-    if (result == -1)
+    else if (temp>30)
     {
-        printf("Square root not found!\n");
+        return 1;
     }
     else
     {
-        printf("The Square root of %d is : %d", number, result);
+        return 0;
     }
+}
+
+int main(){
+    int temp;
+     printf("Enter Temperature (in celcius) : ");
+     scanf("%d", &temp);
+
+     int result = temperatureDetector(temp);
+     
+     if (result == -1)
+     {
+        printf("Cold");
+     }
+     else if (result == 1)
+     {
+        printf("Hot");
+     }
+     else
+     {
+        printf("moderate");
+     }
+    return 0;
 }
